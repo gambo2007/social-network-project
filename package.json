@@ -1,9 +1,9 @@
 {
   "name": "socialnetwork-project",
   "version": "1.0.0",
-  "main": "./bin/www.js",
+  "main": "./bin/www",
   "scripts": {
-    "start": "nodemon --inspect ./bin/www.js"
+    "start": "nodemon --inspect ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

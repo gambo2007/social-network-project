@@ -1,10 +1,15 @@
 *{
-  background-color: rgb(47, 127, 233);
+  background-color: rgb(231, 234, 241);
 }
 body {
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00b7ff;
+.avatar {
+  margin-left: auto;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }

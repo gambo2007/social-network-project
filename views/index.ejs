@@ -22,17 +22,18 @@
 
 <body>
   <!-- Header -->
-  <div class="header">
-    <nav class="navbar navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">Navbar</a>
+  <div class="header pb-3">
+    <nav class="navbar navbar-light bg-dark">
+      <a class="navbar-brand pl-3" style="color:white" href="#">Homepage</a>
+      <img src="images/profile.png" alt="Avatar" class="avatar mr-2">
     </nav>
   </div>
 
   <!-- Content -->
-  <div class="row mt-2">
+  <div class="row ">
     <!-- Menu -->
-    <div class="col-sm-2 border-right">
-      <div class="pt-2">
+    <div class="col-sm-2 " style="border-right: 0.1px solid; border-color: rgb(88, 95, 104);">
+      <div class="container pt-2" style="background-color: white;">
         <a class="dropdown-item" href="#">InForm TDTU</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">CNTT</a>
@@ -43,7 +44,7 @@
     <!-- Post -->
 
     <div class="col-sm-7">
-      <div class="component" style="background-color: white;">
+      <div class="component__post" style="background-color: white;">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">@</span>
@@ -53,7 +54,7 @@
         </div>
       </div>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      <div class="modal fade bg-light" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -93,7 +94,21 @@
     </div>
 
     <!--  -->
-    <div class="col-sm-3">.col-sm-4</div>
+    <div class="col-sm-3" style="border-left: 0.1px solid; border-color: rgb(88, 95, 104);">
+      <div class="component__Inform" style="background-color: white;">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            New Inform
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">News 1</li>
+            <li class="list-group-item">News 2</li>
+            <li class="list-group-item">News 3</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
   </div>
 </body>
 
