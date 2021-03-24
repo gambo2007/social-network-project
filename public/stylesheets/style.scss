@@ -1,0 +1,43 @@
+*{
+    background-color: rgb(231, 234, 241);
+  }
+  body {
+  
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  .navbar-avatar {
+    margin-left: auto;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+
+  .post{
+    display: flex;
+    margin: 0px auto;
+    width: 80%;
+    padding: 15px 25px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px rgb(199, 198, 198) solid;
+    flex-direction: row;
+
+    &__icon{
+        
+      margin: auto 10px ;
+      margin-left: auto;
+      vertical-align: middle;
+      width: 30px;
+      height: 30px;
+      }
+      .form-control{
+          border-radius: 10px;
+          border: 1px white solid;
+        background-color: rgb(235, 229, 229);
+      }
+  }
+  
+  
