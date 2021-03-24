@@ -1,115 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Social Network</title>
-  <link rel="stylesheet" href="stylesheets/style.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-  <!-- Latest compiled and minified CSS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <!-- Header -->
-  <div class="header pb-3">
-    <nav class="navbar navbar-light bg-dark">
-      <a class="navbar-brand pl-3" style="color:white" href="#">Homepage</a>
-      <img src="images/profile.png" alt="Avatar" class="avatar mr-2">
-    </nav>
-  </div>
-
-  <!-- Content -->
-  <div class="row ">
-    <!-- Menu -->
-    <div class="col-sm-2 " style="border-right: 0.1px solid; border-color: rgb(88, 95, 104);">
-      <div class="container pt-2" style="background-color: white;">
-        <a class="dropdown-item" href="#">InForm TDTU</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">CNTT</a>
-        <a class="dropdown-item" href="#">QTKD</a>
-        <a class="dropdown-item" href="#">MARKETING</a>
-      </div>
+<!-- Content -->
+<div class="row ">
+  <!-- Menu -->
+  <div class="col-sm-2 " style="border-right: 0.1px solid; border-color: rgb(88, 95, 104);">
+    <div class="container pt-2" style="background-color: white;">
+      <a class="dropdown-item" href="#">InForm TDTU</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">CNTT</a>
+      <a class="dropdown-item" href="#">QTKD</a>
+      <a class="dropdown-item" href="#">MARKETING</a>
     </div>
-    <!-- Post -->
+  </div>
+  <!-- Post -->
 
-    <div class="col-sm-7">
-      <div class="component__post" style="background-color: white;">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">@</span>
-          </div>
+  <div class="col-sm-7">
+    <div class="component__post" style="background-color: white;">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+
+          <img src="images/article.png" alt="article" class="input-group-icon">
+
           <input type="text" class="form-control" data-toggle="modal" data-target="#exampleModal" placeholder="Username"
             aria-label="Username" aria-describedby="basic-addon1" />
         </div>
       </div>
-
-      <div class="modal fade bg-light" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              Post
-              <div class="input-group mb-3">
-
-                <div class="container">
-                  <div class="row m-2"> <input type="text" class="form-control" style="height: 120px;"
-                      aria-label="Text input with checkbox">
-                  </div>
-                  <div class="row m-2">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="inputGroupFile03"
-                        aria-describedby="inputGroupFileAddon03">
-                      <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
-                    </div>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!--  -->
-    <div class="col-sm-3" style="border-left: 0.1px solid; border-color: rgb(88, 95, 104);">
-      <div class="component__Inform" style="background-color: white;">
-        <div class="card" style="width: 18rem;">
-          <div class="card-header">
-            New Inform
+    <div class="modal fade bg-light" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">News 1</li>
-            <li class="list-group-item">News 2</li>
-            <li class="list-group-item">News 3</li>
-          </ul>
-        </div>
+          <div class="modal-body">
+            Post
+            <div class="input-group mb-3">
 
+              <div class="container">
+                <div class="row m-2"> <input type="text" class="form-control" style="height: 120px;"
+                    aria-label="Text input with checkbox">
+                </div>
+                <div class="row m-2">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile03"
+                      aria-describedby="inputGroupFileAddon03">
+                    <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!--  -->
+  <div class="col-sm-3" style="border-left: 0.1px solid; border-color: rgb(88, 95, 104);">
+    <div class="component__Inform" style="background-color: white;">
+      <div class="card">
+        <div class="card-header">
+          New Inform
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">News 1</li>
+          <li class="list-group-item">News 2</li>
+          <li class="list-group-item">News 3</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
 
 </html>
