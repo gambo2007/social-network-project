@@ -1,54 +1,85 @@
 html{
     background-color: rgb(231, 234, 241);
   }
-  body {
-    
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  }
+body {
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
-  .navbar-avatar {
-    margin-left: auto;
-    vertical-align: middle;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
+.navbar-avatar {
+  margin-left: auto;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 
 .row{
   background-color: rgb(231, 234, 241);
 }
-  .post{
-    display: flex;
-    margin: 0px auto;
-    width: 80%;
-    padding: 10px 25px;
-    background-color: white;
-    border-radius: 8px;
-    border: 1px rgb(199, 198, 198) solid;
-    flex-direction: row;
+.post{
+  display: flex;
+  margin: 0px auto;
+  width: 80%;
+  padding: 10px 25px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px rgb(199, 198, 198) solid;
+  flex-direction: row;
 
-    &__icon{
-        
-      margin: auto 10px ;
-      margin-left: auto;
+  &__icon{
+      
+    margin: auto 10px auto 0px;
+  
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    }
+    .form-control{
+        border-radius: 10px;
+        border: 1px white solid;
+      background-color: rgb(235, 229, 229);
+    }
+}
+.modal{
+  backdrop-filter: blur(5px);
+}
+.modal.show{
+  opacity: 1 !important;
+}
+
+.card.article{
+  margin: 0px auto;
+  width: 80%;
+  margin-top: 30px ;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px rgb(199, 198, 198) solid;
+  
+  .card-header{
+    display:flex;
+    
+    flex-direction: row;
+    padding-bottom: 20px;
+    padding: .3rem 1.25rem;
+    .header-icon{
+      margin: auto 10px auto 0px;
       vertical-align: middle;
       width: 30px;
       height: 30px;
-      }
-      .form-control{
-          border-radius: 10px;
-          border: 1px white solid;
-        background-color: rgb(235, 229, 229);
-      }
+    }
+    .group-subtitle{
+      font-size: 12px;
+    }
+    .header-close{
+      margin-left: auto;
+      margin-bottom: auto;
+    }
   }
-  .modal{
-    
-    backdrop-filter: blur(5px);
-
- }
- .modal.show{
+  .card-footer{
+    text-align: right;
+  }
   
-    opacity: 1 !important;
- }
+}
 
   

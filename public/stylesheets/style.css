@@ -35,8 +35,7 @@ body {
 }
 
 .post__icon {
-  margin: auto 10px;
-  margin-left: auto;
+  margin: auto 10px auto 0px;
   vertical-align: middle;
   width: 30px;
   height: 30px;
@@ -55,5 +54,46 @@ body {
 
 .modal.show {
   opacity: 1 !important;
+}
+
+.card.article {
+  margin: 0px auto;
+  width: 80%;
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px #c7c6c6 solid;
+}
+
+.card.article .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-bottom: 20px;
+  padding: .3rem 1.25rem;
+}
+
+.card.article .card-header .header-icon {
+  margin: auto 10px auto 0px;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+}
+
+.card.article .card-header .group-subtitle {
+  font-size: 12px;
+}
+
+.card.article .card-header .header-close {
+  margin-left: auto;
+  margin-bottom: auto;
+}
+
+.card.article .card-footer {
+  text-align: right;
 }
 /*# sourceMappingURL=style.css.map */
