@@ -1,11 +1,11 @@
-*{
+html{
     background-color: rgb(231, 234, 241);
   }
   body {
-  
+    
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   }
-  
+
   .navbar-avatar {
     margin-left: auto;
     vertical-align: middle;
@@ -14,12 +14,14 @@
     border-radius: 50%;
   }
 
-
+.row{
+  background-color: rgb(231, 234, 241);
+}
   .post{
     display: flex;
     margin: 0px auto;
     width: 80%;
-    padding: 15px 25px;
+    padding: 10px 25px;
     background-color: white;
     border-radius: 8px;
     border: 1px rgb(199, 198, 198) solid;
@@ -39,5 +41,14 @@
         background-color: rgb(235, 229, 229);
       }
   }
+  .modal{
+    
+    backdrop-filter: blur(5px);
+
+ }
+ .modal.show{
   
+    opacity: 1 !important;
+ }
+
   

@@ -1,4 +1,4 @@
-* {
+html {
   background-color: #e7eaf1;
 }
 
@@ -14,13 +14,17 @@ body {
   border-radius: 50%;
 }
 
+.row {
+  background-color: #e7eaf1;
+}
+
 .post {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 0px auto;
   width: 80%;
-  padding: 15px 25px;
+  padding: 10px 25px;
   background-color: white;
   border-radius: 8px;
   border: 1px #c7c6c6 solid;
@@ -42,5 +46,14 @@ body {
   border-radius: 10px;
   border: 1px white solid;
   background-color: #ebe5e5;
+}
+
+.modal {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.modal.show {
+  opacity: 1 !important;
 }
 /*# sourceMappingURL=style.css.map */
