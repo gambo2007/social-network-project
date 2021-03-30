@@ -1,10 +1,12 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
 html{
     background-color: rgb(231, 234, 241);
+     font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   }
-body {
-  
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
 .navbar-avatar {
   margin-left: auto;
@@ -81,5 +83,28 @@ body {
   }
   
 }
+.inform{
+  position: relative;
+  border-radius: 8px;
+  margin: 2rem auto;
+  border: 1px rgb(199, 198, 198) solid;
+  background-color: rgb(255, 255, 255);
+  padding: 1.4rem;
+  width: fit-content;
+  .filter{
+    .form-select{  
+      width: 200px;
+    }
+  }
+  &-body{
+    
+   max-width: 1200px;
+   .card{
+    background-color: rgba(231, 234, 241, 0.472)
+   }
+  }
+}
+
+
 
   

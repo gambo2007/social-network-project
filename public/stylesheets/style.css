@@ -1,9 +1,13 @@
-html {
-  background-color: #e7eaf1;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html {
+  background-color: #e7eaf1;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .navbar-avatar {
@@ -95,5 +99,29 @@ body {
 
 .card.article .card-footer {
   text-align: right;
+}
+
+.inform {
+  position: relative;
+  border-radius: 8px;
+  margin: 2rem auto;
+  border: 1px #c7c6c6 solid;
+  background-color: white;
+  padding: 1.4rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.inform .filter .form-select {
+  width: 200px;
+}
+
+.inform-body {
+  max-width: 1200px;
+}
+
+.inform-body .card {
+  background-color: rgba(231, 234, 241, 0.472);
 }
 /*# sourceMappingURL=style.css.map */

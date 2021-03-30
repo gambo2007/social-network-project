@@ -9,9 +9,9 @@ router.use(expressLayouts)
 router.get('/', function (req, res) {
     res.render('index');
 });
+router.get('/inform', (req, res) => {
+    res.render('inform')
+})
 
-router.post('/', function (req, res){
-    res.send("OK")
-});
 
 module.exports = router;
