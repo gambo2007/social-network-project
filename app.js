@@ -32,8 +32,8 @@ app.use("/users", usersRouter);
 
 app.set("view engine", "ejs");
 app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({ limit: '20mb' }));
+app.use(express.urlencoded({ limit: '20mb', extended: false }));
 
 app.use("/", articleRouter)
 

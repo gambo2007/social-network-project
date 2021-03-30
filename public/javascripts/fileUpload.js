@@ -2,7 +2,14 @@ console.log()
 FilePond.registerPlugin(
     FilePondPluginImagePreview,
     FilePondPluginImageResize,
-    FilePondPluginFileEncode,
+    FilePondPluginFileEncode
+
 )
+FilePond.setOptions({
+    stylePanAspecRatio: 150 / 100,
+    imageResizeTargetWidth: 100,
+    imageResizeTargetHeight: 100,
+
+})
 
 FilePond.parse(document.body);

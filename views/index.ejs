@@ -23,7 +23,7 @@
     <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <form class="modal-content" action="/articles" method="POST">
           <div class="modal-header">
             <h5 class="modal__title" id="exampleModalLabel">Create post</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -33,12 +33,12 @@
           <div class="modal-body">
             <div class="input-group mb-3">
               <div class="container">
-                <div class="row m-2"> <input type="text" class="form-control" style="height: 120px;"
-                    aria-label="Text input with checkbox">
+                <div class="row m-2"> <textarea type="text" class="form-control" name="content" style="height: 120px;"
+                    aria-label="Text input with checkbox"></textarea>
                 </div>
                 <div class="row m-2">
 
-                  <input type="file" class="filepond" width="">
+                  <input type="file" name="image" class="filepond" width="">
 
                 </div>
               </div>
@@ -48,9 +48,9 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-primary">Post</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
 
@@ -67,8 +67,18 @@
         </button>
       </div>
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
+        <p class="card-text">
+
+          <% if(article){%>
+          <% article.forEach(a => { %>
+        <p><%= a.content %></p>
+        <div class="ui image">
+          <img src="<%=a.imageSrc%>" alt="img" class="ui image small">
+        </div>
+
+        <% }); %>
+        <%} %>
+        </p>
       </div>
       <div class="card-footer">
         <button class="btn like btn-outline-primary">Like</button>
