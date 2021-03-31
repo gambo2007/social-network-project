@@ -63,7 +63,7 @@
         <img src="images/profile.png" alt="article" class="header-icon">
         <div class="header-group ml-2">
           <span class="group-title"><strong>You</strong></span>
-          <p class="group-subtitle mb-2 text-muted"><%= a.createAt%> </p>
+          <p class="group-subtitle mb-2 text-muted"><%= a.createAt.toLocaleString()%> </p>
         </div>
         <button type="button" class="header-close close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

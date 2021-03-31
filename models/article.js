@@ -17,9 +17,7 @@ const articleSchema = new Schema({
 })
 
 articleSchema.virtual('imageSrc').get(function () {
-    console.log("src:   ", this.image)
     if (this.image != null && this.imageType != null) {
-        console.log("src:   ", this.imgSrc)
         return `data:${this.imageType};charset=utf-8;base64,${this.image.toString('base64')}`
     }
 })

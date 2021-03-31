@@ -3,7 +3,7 @@ var router = express.Router();
 var app = require('../app');
 var expressLayouts = require('express-ejs-layouts');
 const { route } = require('./users');
-var dateformat = require("dateformat")
+
 const Article = require('./../models/article')
 router.use(expressLayouts)
 
