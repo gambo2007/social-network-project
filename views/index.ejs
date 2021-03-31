@@ -55,37 +55,40 @@
     </div>
 
     <!-- Article -->
+    <% if(article){%>
+    <% article.forEach(a => { %>
+
     <div class="card article">
       <div class="card-header">
         <img src="images/profile.png" alt="article" class="header-icon">
         <div class="header-group ml-2">
           <span class="group-title"><strong>You</strong></span>
-          <p class="group-subtitle mb-2 text-muted">Date</p>
+          <p class="group-subtitle mb-2 text-muted"><%= a.createAt%> </p>
         </div>
         <button type="button" class="header-close close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="card-body">
         <p class="card-text">
-
-          <% if(article){%>
-          <% article.forEach(a => { %>
-        <p><%= a.content %></p>
-        <div class="ui image">
-          <img src="<%=a.imageSrc%>" alt="img" class="ui image small">
-        </div>
-
-        <% }); %>
-        <%} %>
+          <%= a.content %>
         </p>
+
+        <% if (a.imageSrc){ %>
+        <div class="card-image">
+          <img src="<%=a.imageSrc%>" alt="img" class="image">
+        </div>
+        <% } %>
+
       </div>
       <div class="card-footer">
         <button class="btn like btn-outline-primary">Like</button>
         <button class="btn cmt btn-outline-success">Comment</button>
       </div>
     </div>
-
+    <% }); %>
+    <%} %>
   </div>
 
   <!-- Menu Informs -->
@@ -105,5 +108,6 @@
   </div>
 </div>
 </body>
+
 
 </html>
