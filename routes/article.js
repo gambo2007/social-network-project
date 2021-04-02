@@ -4,7 +4,7 @@ const router = express.Router()
 
 const imageMineTypes = ['image/jpeg', 'image/png', 'image/gif']
 
-router.post('/articles', async (req, res) => {
+router.post('/', async (req, res) => {
     console.log("OK")
     const content = req.body.content;
     const image = req.body.image || null

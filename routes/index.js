@@ -18,9 +18,7 @@ router.get('/', async function (req, res) {
     }
 
 });
-router.get('/inform', (req, res) => {
-    res.render('inform')
-})
+
 
 
 

@@ -1,4 +1,4 @@
-<div class="inform ">
+<div class="inform ml-3 mr-3">
     <div class="inform-header">
         <div class="filter mb-3">
             <select class="form-select form-select-sm" aria-label=".form-select-sm example">
@@ -8,40 +8,64 @@
                 <option value="3">Law</option>
             </select>
         </div>
+
+        <button type="button" class="btn btn-secondary btn-add-inform" data-toggle="modal"
+            data-target="#postInformModal">Add new Inform</button>
     </div>
     <div class="inform-body">
+        <% if( inform ){  %>
+        <% inform.forEach( inf =>{ %>
+
+
         <div class="card inform-card mt-3">
             <div class="card-body">
-                <h5 class="card-title">[HỖ TRỢ TRUYỀN THÔNG] CUỘC THI "RUNG CHUÔNG VÀNG 2021" KHOA TÀI CHÍNH NGÂN HÀNG
+                <h5 class="card-title"> <%= inf.title %>
                 </h5>
-                <h6 class="card-subtitle mb-2 text-muted">Khoa Công Nghệ Thông Tin | Date Submitted: 17:39:7 - 19/3/2021
+                <h6 class="card-subtitle mb-2 text-muted">Khoa Công Nghệ Thông Tin | Date Submitted:
+                    <%= inf.createAt  %>
                 </h6>
-                <p class="card-text">Chào các em, Khoa CNTT thông tin đến sinh viên cuộc thi Rung chuông vàng 2021 Khoa
-                    Tài Chính Ngân Hàng tổ chức như sau: Đối tượng tham gia: Tất cả sinh viên đang theo học các Khoa tại
-                    trường Đại học Tôn Đức Thắng. Cách thức đăng ký: Thí sinh đăng ký online theo link Google Form
-                    https://forms.gle/TJLW5ahYC856yTGm7 Thời gian dự kiến: Deadline đăng ký: hết ngày 27/2/2021 Thi vòng
-                    loại (online): 6/3/2021 Thi chung kết: 21/3/2021.</p>
+                <p class="card-text"><%= inf.content %> </p>
                 <a href="#" class="card-link">Xem thêm</a>
 
             </div>
         </div>
-        <div class="card inform-card mt-3">
-            <div class="card-body">
-                <h5 class="card-title">Thông báo nhận Giấy chứng nhận tốt nghiệp tạm thời - Đợt TN T1/2021
-                </h5>
-                <h6 class="card-subtitle mb-2 text-muted">Khoa Công Nghệ Thông Tin | Date Submitted: 10:32:22 -
-                    13/3/2021
-                </h6>
-                <p class="card-text">Sinh viên đã có quyết định tốt nghiệp đợt T1/2021 liên hệ VPK giờ hành chính để
-                    nhận giấy chứng nhận tốt nghiệp tạm thời. Sáng: 8H00 - 11H30 Chiều: 13H30 - 17H00 Khi đến nhận, SV
-                    xuất trình CMND/CCCD hoặc thẻ SV còn rõ ảnh.</p>
-                <a href="#" class="card-link">Xem thêm</a>
-
-            </div>
-        </div>
+        <% }) %>
+        <% } %>
 
     </div>
     <div class="inform-footer">
 
+    </div>
+
+    <div class="modal fade show" id="postInformModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content" action="/inform" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal__title" id="exampleModalLabel">Create post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <div class="container">
+                            <div class="row m-2">
+                                <input type="text" class="form-control" name="title" placeholder="Title">
+                            </div>
+                            <div class="row m-2"> <textarea type="text" class="form-control" name="content"
+                                    style="height: 120px;" aria-label="Text input with checkbox"
+                                    placeholder="Content"></textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

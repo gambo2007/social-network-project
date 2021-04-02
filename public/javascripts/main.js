@@ -1,4 +1,4 @@
-console.log()
+//set up filepond module
 FilePond.registerPlugin(
     FilePondPluginImagePreview,
     FilePondPluginImageResize,
@@ -11,5 +11,6 @@ FilePond.setOptions({
     imageResizeTargetHeight: 100,
 
 })
-
 FilePond.parse(document.body);
+
+//

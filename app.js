@@ -5,12 +5,12 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var articleRouter = require("./routes/article")
-var Article = require("./models/article")
+var informRouter = require("./routes/inform")
 
 
 // setup mongoose
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/article', {
+mongoose.connect('mongodb://localhost/social-network', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -35,6 +35,7 @@ app.use(express.json({ limit: '20mb' }));
 app.use(express.urlencoded({ limit: '20mb', extended: false }));
 
 app.use("/", articleRouter)
+app.use("/", informRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

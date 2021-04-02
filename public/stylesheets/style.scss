@@ -22,10 +22,11 @@ html{
 .post{
   display: flex;
   margin: 0px auto;
-  width: 80%;
+  max-width: 700px;
+  width: 100%;
   padding: 10px 25px;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 14px;
   border: 1px rgb(199, 198, 198) solid;
   flex-direction: row;
 
@@ -34,13 +35,14 @@ html{
     margin: auto 10px auto 0px;
   
     vertical-align: middle;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     }
     .form-control{
-        border-radius: 10px;
+      
+        border-radius: 20px;
         border: 1px white solid;
-      background-color: rgb(235, 229, 229);
+      background-color: #f0f2f5;
     }
 }
 .modal{
@@ -52,14 +54,17 @@ html{
 
 .card.article{
   margin: 0px auto;
-  width: 80%;
+  max-width: 700px;
+  width: 100%;
   margin-top: 30px ;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px rgb(199, 198, 198) solid;
   
   .card-header{
     display:flex;
+    border-top-right-radius: 18px;
+    border-top-left-radius: 18px;
     
     flex-direction: row;
     padding-bottom: 20px;
@@ -67,8 +72,8 @@ html{
     .header-icon{
       margin: auto 10px auto 0px;
       vertical-align: middle;
-      width: 30px;
-      height: 30px;
+      width: 35px;
+    height: 35px;
     }
     .group-subtitle{
       font-size: 12px;
@@ -78,8 +83,23 @@ html{
       margin-bottom: auto;
     }
   }
+  .card-body{
+    display: flex;
+    flex-direction: column; 
+    .card-image{
+      margin:  auto;
+      max-height: 300px;
+      max-width: 500px;
+      height: 80%;
+      width: 80%;
+      object-fit: contain;
+    }
+  }
   .card-footer{
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
     text-align: right;
+   
   }
   
 }
@@ -87,20 +107,33 @@ html{
   position: relative;
   border-radius: 8px;
   margin: 2rem auto;
-  border: 1px rgb(199, 198, 198) solid;
+  border: 1px rgb(198, 198, 199) solid;
   background-color: rgb(255, 255, 255);
   padding: 1.4rem;
   width: fit-content;
-  .filter{
-    .form-select{  
-      width: 200px;
+  .inform-header{
+    display: flex;
+    flex-direction: column;
+    .filter{
+      .form-select{  
+        width: 200px;
+      }
     }
+  .btn-add-inform{
+    
+    width: 100%;
+    max-width: 200px;
+    text-align: start;
+    height: fit-content;
   }
+  }
+  
   &-body{
     
-   max-width: 1200px;
+   max-width: 1000px;
+   width:100%;
    .card{
-    background-color: rgba(231, 234, 241, 0.472)
+    background-color: rgba(238, 240, 246, 0.472)
    }
   }
 }

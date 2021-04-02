@@ -1,6 +1,6 @@
 <div class="row pt-3">
   <!-- Menu Faculty-->
-  <div class="col-sm-2 " style="border-right: 0.1px solid; border-color: rgb(136, 140, 145);">
+  <div class="col-sm-2 " style="border-right: 0.1px solid; border-color: rgb(184, 186, 189);">
     <div class="container pt-2" style="background-color: white;">
       <a class="dropdown-item" href="#">InForm TDTU</a>
       <div class="dropdown-divider"></div>
@@ -34,7 +34,7 @@
             <div class="input-group mb-3">
               <div class="container">
                 <div class="row m-2"> <textarea type="text" class="form-control" name="content" style="height: 120px;"
-                    aria-label="Text input with checkbox"></textarea>
+                    placeholder="What's on your mind ?"></textarea>
                 </div>
                 <div class="row m-2">
 
@@ -74,15 +74,12 @@
         <p class="card-text">
           <%= a.content %>
         </p>
-
         <% if (a.imageSrc){ %>
-        <div class="card-image">
-          <img src="<%=a.imageSrc%>" alt="img" class="image">
-        </div>
+        <img src="<%=a.imageSrc%>" alt="img" class="card-image">
         <% } %>
 
       </div>
-      <div class="card-footer">
+      <div class="card-footer mt-3">
         <button class="btn like btn-outline-primary">Like</button>
         <button class="btn cmt btn-outline-success">Comment</button>
       </div>
@@ -92,7 +89,7 @@
   </div>
 
   <!-- Menu Informs -->
-  <div class="col-sm-3" style="border-left: 0.1px solid; border-color: rgb(136, 140, 145);">
+  <div class="col-sm-3" style="border-left: 0.1px solid; border-color: rgb(184, 186, 189);">
     <div class="component__Inform" style="background-color: white;">
       <div class="card">
         <div class="card-header">

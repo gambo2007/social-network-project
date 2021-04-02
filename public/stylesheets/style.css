@@ -27,10 +27,11 @@ html {
   display: -ms-flexbox;
   display: flex;
   margin: 0px auto;
-  width: 80%;
+  max-width: 700px;
+  width: 100%;
   padding: 10px 25px;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 14px;
   border: 1px #c7c6c6 solid;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -41,14 +42,14 @@ html {
 .post__icon {
   margin: auto 10px auto 0px;
   vertical-align: middle;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 }
 
 .post .form-control {
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px white solid;
-  background-color: #ebe5e5;
+  background-color: #f0f2f5;
 }
 
 .modal {
@@ -62,10 +63,11 @@ html {
 
 .card.article {
   margin: 0px auto;
-  width: 80%;
+  max-width: 700px;
+  width: 100%;
   margin-top: 30px;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px #c7c6c6 solid;
 }
 
@@ -73,6 +75,8 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-top-right-radius: 18px;
+  border-top-left-radius: 18px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -84,8 +88,8 @@ html {
 .card.article .card-header .header-icon {
   margin: auto 10px auto 0px;
   vertical-align: middle;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 }
 
 .card.article .card-header .group-subtitle {
@@ -97,7 +101,29 @@ html {
   margin-bottom: auto;
 }
 
+.card.article .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card.article .card-body .card-image {
+  margin: auto;
+  max-height: 300px;
+  max-width: 500px;
+  height: 80%;
+  width: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .card.article .card-footer {
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 18px;
   text-align: right;
 }
 
@@ -105,7 +131,7 @@ html {
   position: relative;
   border-radius: 8px;
   margin: 2rem auto;
-  border: 1px #c7c6c6 solid;
+  border: 1px #c6c6c7 solid;
   background-color: white;
   padding: 1.4rem;
   width: -webkit-fit-content;
@@ -113,15 +139,35 @@ html {
   width: fit-content;
 }
 
-.inform .filter .form-select {
+.inform .inform-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.inform .inform-header .filter .form-select {
   width: 200px;
 }
 
+.inform .inform-header .btn-add-inform {
+  width: 100%;
+  max-width: 200px;
+  text-align: start;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .inform-body {
-  max-width: 1200px;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .inform-body .card {
-  background-color: rgba(231, 234, 241, 0.472);
+  background-color: rgba(238, 240, 246, 0.472);
 }
 /*# sourceMappingURL=style.css.map */
