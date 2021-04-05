@@ -34,8 +34,8 @@ app.use(logger("dev"));
 app.use(express.json({ limit: '20mb' }));
 app.use(express.urlencoded({ limit: '20mb', extended: false }));
 
-app.use("/", articleRouter)
-app.use("/", informRouter)
+app.use("/articles", articleRouter)
+app.use("/inform", informRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

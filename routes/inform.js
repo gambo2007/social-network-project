@@ -2,7 +2,7 @@ const express = require('express')
 const Inform = require('./../models/inform')
 const router = express.Router()
 
-router.post('/inform', async (req, res) => {
+router.post('/', async (req, res) => {
     const { title, content } = req.body;
 
     const inform = new Inform({
@@ -18,7 +18,7 @@ router.post('/inform', async (req, res) => {
     }
 })
 
-router.get("/inform", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         let inform = await Inform.find();
         console.log(inform)

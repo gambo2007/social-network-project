@@ -17,10 +17,10 @@
     <div class="post mb-3">
       <img src="images/profile.png" alt="article" class="post__icon">
       <input data-backdrop="false" type="text" class="post__input form-control " data-toggle="modal"
-        data-target="#exampleModal" placeholder="What do you think ? " aria-describedby="basic-addon1" />
+        data-target="#postArticleModal" placeholder="What do you think ? " aria-describedby="basic-addon1" />
     </div>
 
-    <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade show" id="postArticleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <form class="modal-content" action="/articles" method="POST">
@@ -55,27 +55,33 @@
     </div>
 
     <!-- Article -->
-    <% if(article){%>
-    <% article.forEach(a => { %>
+    <% if(articles){%>
+    <% articles.forEach(article => { %>
 
     <div class="card article">
       <div class="card-header">
         <img src="images/profile.png" alt="article" class="header-icon">
         <div class="header-group ml-2">
           <span class="group-title"><strong>You</strong></span>
-          <p class="group-subtitle mb-2 text-muted"><%= a.createAt.toLocaleString()%> </p>
+          <p class="group-subtitle mb-2 text-muted"><%= article.createAt.toLocaleString()%> </p>
         </div>
-        <button type="button" class="header-close close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <form action="/articles/delete/<%= article.id %>" method="GET" style="margin-left: auto;">
+          <button type="submit" class="header-close close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </form>
+
+
+
+
       </div>
 
       <div class="card-body">
         <p class="card-text">
-          <%= a.content %>
+          <%= article.content %>
         </p>
-        <% if (a.imageSrc){ %>
-        <img src="<%=a.imageSrc%>" alt="img" class="card-image">
+        <% if (article.imageSrc){ %>
+        <img src="<%=article.imageSrc%>" alt="img" class="card-image">
         <% } %>
 
       </div>

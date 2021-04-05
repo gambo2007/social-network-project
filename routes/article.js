@@ -1,5 +1,6 @@
 const express = require('express')
 const Article = require('./../models/article')
+const { route } = require('./users')
 const router = express.Router()
 
 const imageMineTypes = ['image/jpeg', 'image/png', 'image/gif']
@@ -19,6 +20,14 @@ router.post('/', async (req, res) => {
         console.log(e)
     }
 })
+
+router.get('/delete/:id', async (req, res) => {
+    const { id } = req.params
+    const article = await Article.findByIdAndDelete(id)
+    if (!article) return res.status(404)
+    return res.redirect("/");
+})
+
 
 function saveArticle(article, imgEncoded) {
     if (imgEncoded == null) return;

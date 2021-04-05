@@ -10,9 +10,9 @@ router.use(expressLayouts)
 /* GET home page. */
 router.get('/', async function (req, res) {
     try {
-        let article = await Article.find();
-        article = article.reverse()
-        res.render('index', { article });
+        let articles = await Article.find();
+        articles = articles.reverse()
+        res.render('index', { articles });
     } catch (err) {
         console.log(err)
     }
