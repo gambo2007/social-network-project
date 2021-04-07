@@ -26,35 +26,33 @@
         <form class="modal-content" action="/articles" method="POST">
           <div class="modal-header">
             <h5 class="modal__title" id="exampleModalLabel">Create post</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+
           </div>
           <div class="modal-body">
             <div class="input-group mb-3">
-              <div class="container">
+              <div class="container article ">
                 <div class="row m-2"> <textarea type="text" class="form-control" name="content" style="height: 120px;"
                     placeholder="What's on your mind ?"></textarea>
                 </div>
                 <div class="row m-2">
 
-                  <input type="file" name="image" class="filepond" width="">
+                  <input type="image" name="image" class="filepond">
 
                 </div>
               </div>
-
-
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Post</button>
+            <button type="submit" class="btn btn-primary btn-post-article">Post</button>
           </div>
         </form>
       </div>
     </div>
 
-    <!-- Article -->
+    <!-- ARTICLE CONTAINER-->
+
+
     <% if(articles){%>
     <% articles.forEach(article => { %>
 
@@ -65,15 +63,24 @@
           <span class="group-title"><strong>You</strong></span>
           <p class="group-subtitle mb-2 text-muted"><%= article.createAt.toLocaleString()%> </p>
         </div>
-        <form action="/articles/delete/<%= article.id %>" method="GET" style="margin-left: auto;">
-          <button type="submit" class="header-close close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
+
+        <div class="dropdown" style="margin-left: auto;">
+          <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-ellipsis-v"></i>
           </button>
-        </form>
 
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
+            <a class="dropdown-item btn-del" href="/articles/delete/<%= article.id %>"><i
+                class="fas fa-trash-alt btn-del"></i></a>
 
+            <a class="dropdown-item btn-edit" onclick="editArticle('<%= article.id %>')" name="btn-edit-article"
+              data-toggle="modal" data-target="#editArticleModal">
+              <i class=" fas fa-edit btn-edit"></i></a>
 
+          </div>
+        </div>
       </div>
 
       <div class="card-body">
@@ -81,7 +88,8 @@
           <%= article.content %>
         </p>
         <% if (article.imageSrc){ %>
-        <img src="<%=article.imageSrc%>" alt="img" class="card-image">
+
+        <img src="<%=article.imageSrc%>" alt="img" class="card-image" id="<%= article.id %>">
         <% } %>
 
       </div>
@@ -92,6 +100,47 @@
     </div>
     <% }); %>
     <%} %>
+  </div>
+
+  <!-- EDIT MODAL -->
+
+  <div class="modal fade show" id="editArticleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <form class="modal-content" method="POST">
+        <div class="modal-header">
+          <h5 class="modal__title" id="exampleModalLabel">Edit post</h5>
+
+        </div>
+        <div class="modal-body" style="margin-bottom: -10px;">
+          <div class=" input-group mb-3">
+            <div class="container edit-article ">
+              <div class="row m-2"> <textarea type="text" class="form-control" name="edit-content"
+                  style="height: 120px;" placeholder="What's on your mind ?"></textarea>
+              </div>
+              <div class="row m-2">
+
+                <input type="image" name="edit-image" class="filepond">
+
+              </div>
+
+            </div>
+          </div>
+          <div style="text-align: right; ">
+            <input type="checkbox" class="chb-remove-article mr-1" value="remove-image" style="transform: scale(1.2);">
+            </input>Remove image
+          </div>
+
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary btn-post-article">Update</button>
+
+        </div>
+      </form>
+    </div>
   </div>
 
   <!-- Menu Informs -->
@@ -112,5 +161,59 @@
 </div>
 </body>
 
+<script>
+
+  function editArticle(id) {
+    let articles = `<%- JSON.stringify(articles) %>`
+    articles = JSON.parse(articles)
+    console.log(articles)
+    articles.forEach(article => {
+      if (article._id == id) {
+        const content = article.content
+        const imageSrc = $(`[id=${id}]`).attr("src")
+        $('[name="edit-content"]').val(content)
+        $('.container.edit-article').append("<img class='edit-image'> </img>")
+
+
+
+
+        $(document).ready(e => {
+          $('.edit-image').attr("src", imageSrc)
+        })
+
+      }
+
+    })
+
+
+  }
+  $("#postArticleModal").on("hidden.bs.modal", function () {
+    $('.edit-image').remove()
+    $('[name="content"]').val("")
+    $('.btn-remove-img').remove()
+  });
+
+  function update(article) {
+    console.log(article._id)
+    // fetch("/articles/update/" + article._id, {
+    //   method: "POST",
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(article)
+    // })
+    //   .then(res => res.json())
+    //   .then(json => console.log(json))
+    //   .catch(e => console.log(e))
+
+  }
+
+
+  // var er = document.getElementById('btn-edit-article').click(e => {
+  //   article = e.target.dataset.article
+  //   data = JSON.parse(data)
+  //   console.log(data)
+  // })
+</script>
 
 </html>

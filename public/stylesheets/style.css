@@ -55,6 +55,17 @@ html {
 .modal {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal .edit-image {
+  width: 200px;
 }
 
 .modal.show {
@@ -99,6 +110,14 @@ html {
 .card.article .card-header .header-close {
   margin-left: auto;
   margin-bottom: auto;
+}
+
+.card.article .card-header .downdown-menu.he {
+  background-color: aqua;
+}
+
+.card.article img[name="edited-article"] {
+  height: 100px;
 }
 
 .card.article .card-body {

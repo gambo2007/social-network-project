@@ -28,6 +28,20 @@ router.get('/delete/:id', async (req, res) => {
     return res.redirect("/");
 })
 
+// router.get('/edit/:id', async (req, res) => {
+//     const { id } = req.params
+//     const article = await Article.findByIdAndUpdate(id)
+//     if (!article) return res.status(404)
+//     return res.redirect("/", { article });
+// })
+
+router.post('/update/:id', async (req, res) => {
+    const { id } = req.params
+    const article = await Article.findByIdAndUpdate(id)
+    if (!article) return res.status(404)
+    console.log(id)
+    return res.redirect("/");
+})
 
 function saveArticle(article, imgEncoded) {
     if (imgEncoded == null) return;

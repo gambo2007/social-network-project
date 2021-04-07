@@ -19,6 +19,12 @@ mongoose.connect('mongodb://localhost/social-network', {
 var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
+// view engine setup
+
+app.set("view engine", "ejs");
+app.use(logger("dev"));
+app.use(express.json({ limit: '20mb' }));
+app.use(express.urlencoded({ limit: '20mb', extended: false }));
 app.set("layout", "./layouts/layout")
 app.set("javascripts", "./javascripts/fileUpload")
 
@@ -27,12 +33,8 @@ app.set("javascripts", "./javascripts/fileUpload")
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-// view engine setup
 
-app.set("view engine", "ejs");
-app.use(logger("dev"));
-app.use(express.json({ limit: '20mb' }));
-app.use(express.urlencoded({ limit: '20mb', extended: false }));
+
 
 app.use("/articles", articleRouter)
 app.use("/inform", informRouter)
