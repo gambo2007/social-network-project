@@ -2,7 +2,7 @@
   <!-- Menu Faculty-->
   <div class="col-sm-2 " style="border-right: 0.1px solid; border-color: rgb(184, 186, 189);">
     <div class="container pt-2" style="background-color: white;">
-      <a class="dropdown-item" href="#">InForm TDTU</a>
+      <a class="dropdown-item" href="/informs">InForm TDTU</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#">CNTT</a>
       <a class="dropdown-item" href="#">QTKD</a>
@@ -58,6 +58,7 @@
 
     <div class="card article">
       <div class="card-header">
+
         <img src="images/profile.png" alt="article" class="header-icon">
         <div class="header-group ml-2">
           <span class="group-title"><strong>You</strong></span>
@@ -81,6 +82,7 @@
 
           </div>
         </div>
+
       </div>
 
       <div class="card-body">
@@ -171,21 +173,11 @@
         $('.container.edit-article').append("<img class='edit-image'> </img>")
 
         $('.edit-modal').attr("action", `/articles/update/${id}` + "?_method=PUT")
-        // $('.btn-update-article').click(e => {
-        //   $('.edit-modal').attr("action", `/acticles/update/${id}`)
-
-
-        // })
-
         $(document).ready(e => {
           $('.edit-image').attr("src", imageSrc)
         })
-
       }
-
-
     })
-
 
   }
   $("#editArticleModal").on("hidden.bs.modal", function () {
@@ -193,11 +185,6 @@
     $('[name="edit-content"]').val("")
 
   });
-
-  function update(article) {
-    console.log(article._id)
-
-  }
 
 </script>
 

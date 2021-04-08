@@ -121,16 +121,16 @@ html{
   
 }
 .inform{
-  position: relative;
+
   border-radius: 8px;
   margin: 2rem auto;
   border: 1px rgb(198, 198, 199) solid;
   background-color: rgb(255, 255, 255);
   padding: 1.4rem;
-  width: fit-content;
-  .inform-header{
-    display: flex;
-    flex-direction: column;
+  max-width: 1100px;
+  width:100%;
+  &-header{
+    
     .filter{
       .form-select{  
         width: 200px;
@@ -146,11 +146,18 @@ html{
   }
   
   &-body{
-    
-   max-width: 1000px;
+   
    width:100%;
    .card{
-    background-color: rgba(238, 240, 246, 0.472)
+    background-color: rgba(238, 240, 246, 0.472);
+    &-header{
+      display: flex;
+      flex-direction: row;
+      .header-group{
+        
+      }
+
+    }
    }
   }
 }

@@ -147,32 +147,20 @@ html {
 }
 
 .inform {
-  position: relative;
   border-radius: 8px;
   margin: 2rem auto;
   border: 1px #c6c6c7 solid;
   background-color: white;
   padding: 1.4rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  max-width: 1100px;
+  width: 100%;
 }
 
-.inform .inform-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.inform .inform-header .filter .form-select {
+.inform-header .filter .form-select {
   width: 200px;
 }
 
-.inform .inform-header .btn-add-inform {
+.inform-header .btn-add-inform {
   width: 100%;
   max-width: 200px;
   text-align: start;
@@ -182,11 +170,20 @@ html {
 }
 
 .inform-body {
-  max-width: 1000px;
   width: 100%;
 }
 
 .inform-body .card {
   background-color: rgba(238, 240, 246, 0.472);
+}
+
+.inform-body .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 /*# sourceMappingURL=style.css.map */
