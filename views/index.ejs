@@ -107,7 +107,7 @@
   <div class="modal fade show" id="editArticleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <form class="modal-content" method="POST">
+      <form class="modal-content edit-modal" method="POST">
         <div class="modal-header">
           <h5 class="modal__title" id="exampleModalLabel">Edit post</h5>
 
@@ -115,29 +115,24 @@
         <div class="modal-body" style="margin-bottom: -10px;">
           <div class=" input-group mb-3">
             <div class="container edit-article ">
-              <div class="row m-2"> <textarea type="text" class="form-control" name="edit-content"
-                  style="height: 120px;" placeholder="What's on your mind ?"></textarea>
+              <div class="row m-2"> <textarea type="text" class="form-control" name="content" style="height: 120px;"
+                  placeholder="What's on your mind ?"></textarea>
               </div>
               <div class="row m-2">
-
-                <input type="image" name="edit-image" class="filepond">
-
+                <input type="image" name="image" class="filepond">
               </div>
-
             </div>
           </div>
           <div style="text-align: right; ">
-            <input type="checkbox" class="chb-remove-article mr-1" value="remove-image" style="transform: scale(1.2);">
-            </input>Remove image
+            <input type="checkbox" class="chb-remove-img mr-1" value="remove-image" id="remove-img"
+              style="transform: scale(1.2);">
+            <label for="remove-img">Remove image</label> </input>
           </div>
 
-
         </div>
-
-        <div class="modal-footer">
+        <div class=" modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary btn-post-article">Update</button>
-
+          <button type="submit" class="btn btn-primary btn-update-article">Update</button>
         </div>
       </form>
     </div>
@@ -166,16 +161,21 @@
   function editArticle(id) {
     let articles = `<%- JSON.stringify(articles) %>`
     articles = JSON.parse(articles)
-    console.log(articles)
     articles.forEach(article => {
       if (article._id == id) {
+
         const content = article.content
+        console.log(content)
         const imageSrc = $(`[id=${id}]`).attr("src")
-        $('[name="edit-content"]').val(content)
+        $('[name="content"]').val(content)
         $('.container.edit-article').append("<img class='edit-image'> </img>")
 
+        $('.edit-modal').attr("action", `/articles/update/${id}` + "?_method=PUT")
+        // $('.btn-update-article').click(e => {
+        //   $('.edit-modal').attr("action", `/acticles/update/${id}`)
 
 
+        // })
 
         $(document).ready(e => {
           $('.edit-image').attr("src", imageSrc)
@@ -183,37 +183,22 @@
 
       }
 
+
     })
 
 
   }
-  $("#postArticleModal").on("hidden.bs.modal", function () {
+  $("#editArticleModal").on("hidden.bs.modal", function () {
     $('.edit-image').remove()
-    $('[name="content"]').val("")
-    $('.btn-remove-img').remove()
+    $('[name="edit-content"]').val("")
+
   });
 
   function update(article) {
     console.log(article._id)
-    // fetch("/articles/update/" + article._id, {
-    //   method: "POST",
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(article)
-    // })
-    //   .then(res => res.json())
-    //   .then(json => console.log(json))
-    //   .catch(e => console.log(e))
 
   }
 
-
-  // var er = document.getElementById('btn-edit-article').click(e => {
-  //   article = e.target.dataset.article
-  //   data = JSON.parse(data)
-  //   console.log(data)
-  // })
 </script>
 
 </html>

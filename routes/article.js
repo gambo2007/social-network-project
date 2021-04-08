@@ -37,10 +37,21 @@ router.get('/delete/:id', async (req, res) => {
 
 router.post('/update/:id', async (req, res) => {
     const { id } = req.params
-    const article = await Article.findByIdAndUpdate(id)
-    if (!article) return res.status(404)
+    // const article = await Article.findByIdAndUpdate(id)
+    // if (!article) return res.status(404)
     console.log(id)
-    return res.redirect("/");
+    const content = req.body.content;
+    const image = req.body.image || null
+
+    const article = await Article.findById(id)
+    article.content = content
+    saveArticle(article, image)
+    try {
+        const updatedArticle = await article.save()
+        return res.redirect('/')
+    } catch (e) {
+        console.log(e)
+    }
 })
 
 function saveArticle(article, imgEncoded) {

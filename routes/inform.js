@@ -2,7 +2,7 @@ const express = require('express')
 const Inform = require('./../models/inform')
 const router = express.Router()
 
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
     const { title, content } = req.body;
 
     const inform = new Inform({
