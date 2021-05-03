@@ -4,6 +4,7 @@ var app = require('../app');
 var expressLayouts = require('express-ejs-layouts');
 const { route } = require('./users');
 
+
 const Article = require('./../models/article')
 router.use(expressLayouts)
 
@@ -18,6 +19,7 @@ router.get('/', async function (req, res) {
     }
 
 });
+
 
 
 
